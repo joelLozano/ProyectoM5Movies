@@ -1,18 +1,23 @@
 import React from 'react'
-
-export default function Nav() {
+import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
+export default function NavComponet() {
   return (
-    <div className="container-fluid">
-        <div className="row">
-            <div className="col">
-                <nav>
-                    <ul>
-                        <li>comedia</li>
-                        <li>terror</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container>
+      <Navbar.Brand href="#home">Joe Pelis</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <NavLink to="/independientes">Independientes</NavLink>
+          <NavLink to="/comedia">Comedia</NavLink>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   )
 }
